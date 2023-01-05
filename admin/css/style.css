@@ -1,0 +1,32 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.cartes {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+#finies {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#current {
+    color: blue;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#consult {
+    color: gray;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
