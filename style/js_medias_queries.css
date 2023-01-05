@@ -1,0 +1,298 @@
+/**************************** 
+* Les breakpoint Bootstrap :
+*
+*   sm: 576px
+*   md: 768px
+*   lg: 992px
+*   xl: 1200px
+*   xxl: 1400px
+*
+****************************/
+/*  Start of the Bannier with Header */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .jl_formContact {
+    padding-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #jl_megaMenu .jl_item {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  #jl_megaMenu img {
+    width: 15vw;
+  }
+
+  #jl_megaMenu .jl_item:nth-child(3) img {
+    width: 11vw;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .jl_formContact {
+    padding: 10% 0 10% 0;
+  }
+
+  .jl_formContact textarea {
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  footer ul {
+    padding: 0 !important;
+  }
+  .jl_formContact {
+    padding: 40px 10% 10% 10%;
+  }
+
+  .jl_formContact textarea {
+    height: 140px;
+  }
+
+  .solutions,
+  .infos {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  #jl_xsMenu {
+    display: block;
+  }
+  header nav {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  header nav {
+    position: fixed;
+    top: 40px;
+    left: 24px;
+    display: none;
+  }
+  header nav li {
+    display: block;
+    text-align: right;
+    padding-right: 10px !important;
+  }
+  header nav ul {
+    background-color: white;
+    left: calc(100vw - 214px);
+    border-radius: 0 0 0 8px;
+    bottom: 5px;
+  }
+  #jl_presBar a {
+    display: none !important;
+  }
+  #address {
+    font-size: 0.8em;
+  }
+  header nav a {
+    color: var(--charcoalGrey) !important;
+  }
+
+  .jl_formContact {
+    padding: 0 50px;
+  }
+
+  #jl_slogan h1 {
+    font-size: calc(1em + 1vw);
+  }
+
+  #jl_megaMenu .jl_item {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  #jl_megaMenu img {
+    width: 20vw;
+  }
+
+  #jl_megaMenu .jl_item:nth-child(3) img {
+    width: 16vw;
+  }
+
+  #jl_simulateur .jl_item {
+    width: 90%;
+  }
+}
+
+/*  End of the Bannier with Header */
+
+/*  start of the Bannier with slogan */
+@media screen and (max-width: 527px) {
+  .js_slogan {
+    background-color: orange;
+    font-size: 20px;
+    color: #fff;
+    height: 90px;
+    width: 300px;
+    margin-top: 120px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 68, 0, 0.178);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/*  end of the Bannier with slogan */
+
+/*  start of the title with slogan */
+
+@media screen and (max-width: 987px) {
+  .js_title {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 717px) {
+  .js_title {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 603px) {
+  .js_title {
+    font-size: 25px;
+  }
+}
+
+/*  end of the title with slogan */
+
+/*  start of the title with calculator */
+
+@media screen and (max-width: 727px) {
+  .js_calculator {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 727px) {
+  .js_calculator {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    margin: 0 20px;
+  }
+}
+
+/*  end of the title with calculator */
+
+/*  start of the title with promises */
+
+@media screen and (max-width: 931px) {
+  .js_promises {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .js_cards {
+    margin-top: 20px;
+  }
+}
+
+/*  end of the title with promises */
+
+/*  start of the title with our_simulators */
+
+@media screen and (max-width: 800px) {
+  .type0 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .type1 {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .type0 button {
+    width: 250px;
+  }
+}
+
+/*  end of the title with our_simulators */
+
+/*  start of the title with satisfaction */
+
+@media screen and (max-width: 636px) {
+  .js_satisfaction {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .js_satisfaction .card {
+    margin-bottom: 20px;
+  }
+}
+
+/*  end of the title with satisfaction */
+
+/*  start of the title with estimate */
+@media screen and (max-width: 1366px) {
+  .js_speak_projet button {
+    width: 200px;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1134px) {
+  .js_speak_projet button {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 621px) {
+  .js_speak_projet button {
+    width: 100px;
+    height: 90px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+  }
+}
+.js_speak_projet {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/*  end of the title with estimate */
+
+/*  end of the title with co_borrower */
+@media screen and (max-width: 780px) {
+  .js_speak_projet_js {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .js_date {
+    width: 305px;
+  }
+}
+
+@media screen and (max-width: 780px) and (min-width: 668px) {
+  .js_date {
+    width: 605px;
+  }
+}
+
+/*  end of the title with co_borrower */

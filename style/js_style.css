@@ -1,0 +1,373 @@
+/*** Header ***/
+body {
+  margin: 0;
+  padding: 0;
+
+  --charcoalGrey: #424242;
+  --themePrincipal: orange; /* /!\ A MODIFIER PLUS TARD */
+}
+
+/*** Header ***/
+
+#jl_presBar {
+  width: 100vw;
+  background-color: var(--charcoalGrey);
+  height: 40px;
+  line-height: 40px;
+  color: white;
+}
+
+#jl_presBar a {
+  text-decoration: none;
+  color: white;
+}
+
+#jl_presBar a:nth-child(2) {
+  text-decoration: none;
+  color: var(--charcoalGrey);
+  height: 26px;
+  line-height: 22px;
+  padding-top: 0;
+  margin: 0 10px 3px 5px;
+}
+
+#jl_logo {
+  height: 30px;
+  margin: 3px 0 0 10px;
+}
+
+header nav ul {
+  list-style: none;
+  border-bottom: 2px solid var(--charcoalGrey);
+  padding-left: 10px;
+}
+
+header nav li {
+  margin: 5px;
+  display: inline-block;
+}
+
+header nav li a {
+  color: var(--charcoalGrey);
+  text-decoration: none;
+}
+
+header nav li a:hover {
+  text-decoration: underline;
+  color: var(--themePrincipal);
+}
+
+/* end Header */
+
+/* footer*/
+footer {
+  background-color: var(--charcoalGrey) !important;
+  color: white !important;
+  padding: 0 !important;
+}
+
+footer nav ul li {
+  list-style: none;
+}
+
+#jl_underItem {
+  display: none;
+}
+
+#jl_triangleClose {
+  display: none;
+}
+
+#jl_triangleOpen:hover,
+#jl_triangleClose:hover {
+  cursor: pointer;
+}
+
+#footerEmail {
+  width: 100%;
+}
+
+#footerMessage {
+  width: 100%;
+}
+
+.jl_formContact {
+  padding-left: 80px;
+  padding-right: 30px;
+}
+
+.jl_formContact form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+#jl_xsMenuItem {
+  display: none;
+}
+/* end footer */
+
+/*  start of the Bannier with slogan */
+.js_baner {
+  background-image: url(../file/img/Capture\ d’écran\ 2022-12-19\ 105626.png);
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.js_slogan {
+  background-color: orange;
+  font-size: 40px;
+  color: #fff;
+  height: 130px;
+  width: 500px;
+  text-align: center;
+  margin-top: 120px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 68, 0, 0.178);
+  font-weight: bold;
+}
+/*  end of the Bannier with slogan */
+
+/*  start of the title with slogan */
+
+.js_title {
+  text-align: center;
+  font-size: 40px;
+}
+
+/*  end of the title with slogan */
+
+/*  start of the title with calculator */
+.js_calculator {
+  display: flex;
+  justify-content: center;
+}
+
+.js_monthly {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 250px;
+  width: 500px;
+}
+
+/*  end of the title with calculator */
+
+/*  start of the title with promises */
+
+.js_promises {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.card {
+  margin: 0 24px;
+}
+
+.js_logo_promises {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 120px;
+  font-size: 50px;
+}
+
+.js_text_promises {
+  width: 160px;
+  height: 120px;
+}
+
+.js_logo_text {
+  display: flex;
+  justify-content: space-evenly;
+}
+/*  end of the title with promises */
+
+/*  start of the title with our_simulators */
+
+.js_our_simulators {
+  display: flex;
+  justify-content: center;
+}
+
+.type0 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.type0 i {
+  font-size: 50px;
+}
+
+.type1_1 {
+  margin-bottom: 20px;
+}
+
+.type2_1 {
+  margin-bottom: 20px;
+}
+
+.type0 button {
+  width: 350px;
+  height: 150px;
+}
+
+.type0 span {
+  font-size: 21px;
+}
+
+.type2 span {
+  margin-left: 20px;
+}
+
+/* Start modal our_simulators*/
+
+.modal-footer button {
+  height: 50px;
+  width: 250px;
+}
+.modal-header button {
+  height: 50px;
+  width: 50px;
+}
+
+/* end modal our_simulators*/
+
+/*  end of the title with our_simulators */
+
+/*  start of the title with satisfaction */
+.js_satisfaction {
+  display: flex;
+  justify-content: center;
+}
+
+.js_satisfaction i {
+  color: orange;
+}
+
+.js_satisfaction .card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*  end of the title with satisfaction */
+
+/*  start of the title with estimate */
+
+.js_speak_projet {
+  display: flex;
+  justify-content: space-around;
+}
+/*
+.js_speak_projet button {
+  width: 250px;
+  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 250px;
+  display: flex;
+  justify-content: center;
+}
+*/
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.radio-buttons {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.custom-radio input {
+  display: none;
+}
+
+.radio-btn {
+  margin: 10px;
+  width: 230px;
+  height: 200px;
+  border: 3px solid transparent;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 20px #c3c3c367;
+  cursor: pointer;
+}
+
+.radio-btn > i {
+  color: #ffffff;
+  background-color: orange;
+  font-size: 20px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) scale(4);
+  border-radius: 50px;
+  padding: 3px;
+  transition: 0.2s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.radio-btn .hobbies-icon {
+  width: 190px;
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-btn .hobbies-icon i {
+  color: #8373e6;
+  line-height: 80px;
+  font-size: 60px;
+}
+
+.radio-btn .hobbies-icon h3 {
+  color: orange;
+  font-family: "Raleway", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.custom-radio input:checked + .radio-btn {
+  border: 3px solid orange;
+}
+
+.custom-radio input:checked + .radio-btn > i {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/*  end of the title with estimate */
+
+/*  end of the title with co_borrower */
+.js_speak_projet_js {
+  display: flex;
+}
+
+.js_logo_borrower {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: orange;
+}
+.js_logo_borrower .bi {
+  margin-right: 10px;
+}
+
+/*  end of the title with co_borrower */
