@@ -1,28 +1,30 @@
 <?php
+session_start();
 require("includes/header_connexion.php");
-
 ?>
+<br><br>
 
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<?php if (isset($_GET['success']) && $_GET['success'] == "inscrit") { ?>
+<p class="success">Vous êtes bien inscrit, vous pouvez maintenant vous connecter</p>
+<?php } else if (!empty($_GET['error']) && $_GET['error'] == "password") { ?>
+<p class="error">Mot de passe incorrect</p>
+<?php } ?>
 
 <div class="container">
-    <div class="frame">
-        <div class="nav">
-            <ul class"links">
-                <li class="signin-active"><a class="btn">Connexion</a></li>
-            </ul>
+    <form action="actions/connexion_back.php" method="POST">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Adresse mail</label>
+            <input type="email" class="form-control" name="email">
         </div>
-        <div ng-app ng-init="checked = false">
-            <form class="form-signin" action="" method="post" name="form">
-                <label for="username">Email</label>
-                <input class="form-styling" type="text" name="username" p />
-                <label for="password">Mot de passe</label>
-                <input class="form-styling" type="text" name="password" />
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" name="password">
+        </div>
 
-                <div class="btn-animate">
-                    <a class="btn-signin">Se connecter</a>
-                </div>
-            </form>
+        <button type="submit" class="btn btn-primary" name="validate">Se connecter</button>
+    </form>
+</div>
 
 
-            <?php require("includes/footer_connexion.php"); ?>
+
+<?php require("includes/footer_connexion.php"); ?>

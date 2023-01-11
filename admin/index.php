@@ -1,29 +1,32 @@
 <?php
-require("includes/header_admin.php");
-require('../componants/function.php');
-// FONCTIONS POUR OBTENIR LES 3 DERNIERES DEMANDES DE PRETS, ASSURANCE, RACHAT ET DERNIERS CLIENTS
-$lastHomeLoans = GetLastHomeLoans($bdd);
-$lastInsurances = GetLastInsurances($bdd);
-$lastRepurchases = GetLastRepurchases($bdd);
-$lastBorrowers = GetLastBorrowers($bdd);
+session_start();
 
-// FONCTIONS POUR OBTENIR LE NOMBRE DE DEMANDE DE PRET, ASSURANCE ET RACHAT DE CREDIT QUI ONT LE STATUT "consultée"
-$ConsultedHomeLoans = GetConsultedHomeLoansCount($bdd);
-$ConsultedInsurances = GetAllConsultedInsurancesCount($bdd);
-$ConsultedRepurchases = GetAllConsultedRepurchasesCount($bdd);
+if (!empty($_SESSION) && $_SESSION['id'] == '2' && $_SESSION['email'] == "anthonydafonseca@yahoo.fr") {
+    require("includes/header_admin.php");
+    require('../componants/function.php');
+    // FONCTIONS POUR OBTENIR LES 3 DERNIERES DEMANDES DE PRETS, ASSURANCE, RACHAT ET DERNIERS CLIENTS
+    $lastHomeLoans = GetLastHomeLoans($bdd);
+    $lastInsurances = GetLastInsurances($bdd);
+    $lastRepurchases = GetLastRepurchases($bdd);
+    $lastBorrowers = GetLastBorrowers($bdd);
 
-// FONCTIONS POUR OBTENIR LE NOMBRE TOTAL DE DEMANDES DE PRET, ASSURANCE ET RACHAT DE CREDIT QUI ONT LE STATUT "en cours"
-$TreatingdHomeLoans = GetTreatingHomeLoansCount($bdd);
-$TreatingInsurances = GetTreatingInsurancesCount($bdd);
-$TreatingRepurchases = GetTreatingRepurchasesCount($bdd);
+    // FONCTIONS POUR OBTENIR LE NOMBRE DE DEMANDE DE PRET, ASSURANCE ET RACHAT DE CREDIT QUI ONT LE STATUT "consultée"
+    $ConsultedHomeLoans = GetConsultedHomeLoansCount($bdd);
+    $ConsultedInsurances = GetAllConsultedInsurancesCount($bdd);
+    $ConsultedRepurchases = GetAllConsultedRepurchasesCount($bdd);
 
-// FONCTIONS POUR OBTENIR LE NOMBRE TOTAL DE DEMANDES DE PRET, ASSURANCE ET RACHAT DE CREDIT QUI ONT LE STATUT "traitée"
-$TreatedHomeLoans = GetTreatedHomeLoansCount($bdd);
-$TreatedInsurances = GetTreatedInsurancesCount($bdd);
-$TreatedRepurchases = GetTreatedRepurchasesCount($bdd);
+    // FONCTIONS POUR OBTENIR LE NOMBRE TOTAL DE DEMANDES DE PRET, ASSURANCE ET RACHAT DE CREDIT QUI ONT LE STATUT "en cours"
+    $TreatingdHomeLoans = GetTreatingHomeLoansCount($bdd);
+    $TreatingInsurances = GetTreatingInsurancesCount($bdd);
+    $TreatingRepurchases = GetTreatingRepurchasesCount($bdd);
+
+    // FONCTIONS POUR OBTENIR LE NOMBRE TOTAL DE DEMANDES DE PRET, ASSURANCE ET RACHAT DE CREDIT QUI ONT LE STATUT "traitée"
+    $TreatedHomeLoans = GetTreatedHomeLoansCount($bdd);
+    $TreatedInsurances = GetTreatedInsurancesCount($bdd);
+    $TreatedRepurchases = GetTreatedRepurchasesCount($bdd);
 
 
-require("includes/wrapper.php");
+    require("includes/wrapper.php");
 
 ?>
 
@@ -373,7 +376,9 @@ require("includes/wrapper.php");
     <?php } ?>
 
 
-
+    <?php } else {
+    header("location: ../../real_estate.php?error=falseadmin");
+} ?>
 
 
     <?php require("includes/footer_admin.php");

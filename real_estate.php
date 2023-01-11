@@ -1,4 +1,6 @@
-<?php require("../courtier/componants/header.php"); ?>
+<?php
+require("../courtier/componants/header.php");
+?>
 
 <section>
     <div class="js_baner">
@@ -25,10 +27,12 @@
 
 
                         <div class="col-sm-5">
-                            <input type="number" class="form-control" id="rangenumber" value="750" min="0" max="10000" oninput="range.value=value" />
+                            <input type="number" class="form-control" id="rangenumber" value="750" min="0" max="10000"
+                                oninput="range.value=value" />
                         </div>
                         <br><br>
-                        <input type="range" class="form-range" id="range" min="0" max="10000" value="750" oninput="rangenumber.value=value" />
+                        <input type="range" class="form-range" id="range" min="0" max="10000" value="750"
+                            oninput="rangenumber.value=value" />
                     </div>
 
 
@@ -55,10 +59,12 @@
 
 
                         <div class="col-sm-5">
-                            <input type="number" class="form-control" id="rangevalue" value="170000" oninput="ranges.value=value">
+                            <input type="number" class="form-control" id="rangevalue" value="170000"
+                                oninput="ranges.value=value">
                         </div>
                         <br><br>
-                        <input type="range" class="form-range" id="ranges" min="0" max="999999" value="170000" oninput="rangevalue.value=value">
+                        <input type="range" class="form-range" id="ranges" min="0" max="999999" value="170000"
+                            oninput="rangevalue.value=value">
                     </div>
 
 
@@ -207,8 +213,11 @@
                     <div class="card-body">
                         <h5 class="card-title">John Doe</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Prêt Immobilier</h6>
-                        <p class="card-text">Jhon Doe à été d'un professionnalisme sans nom. Il m'a apporter toutes les réponses à mes questions. Je le recommande pour vos assurances, les yeux fermés! Et je n'hésiterai pas à parler de lui autour de moi!</p>
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                        <p class="card-text">Jhon Doe à été d'un professionnalisme sans nom. Il m'a apporter toutes les
+                            réponses à mes questions. Je le recommande pour vos assurances, les yeux fermés! Et je
+                            n'hésiterai pas à parler de lui autour de moi!</p>
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star"></i>
 
                     </div>
                 </div>
@@ -217,8 +226,11 @@
                     <div class="card-body">
                         <h5 class="card-title">John Doe</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Prêt Immobilier</h6>
-                        <p class="card-text">Jhon Doe à été d'un professionnalisme sans nom. Il m'a apporter toutes les réponses à mes questions. Je le recommande pour vos assurances, les yeux fermés! Et je n'hésiterai pas à parler de lui autour de moi!</p>
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                        <p class="card-text">Jhon Doe à été d'un professionnalisme sans nom. Il m'a apporter toutes les
+                            réponses à mes questions. Je le recommande pour vos assurances, les yeux fermés! Et je
+                            n'hésiterai pas à parler de lui autour de moi!</p>
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star"></i>
 
 
                     </div>
@@ -228,8 +240,11 @@
                     <div class="card-body">
                         <h5 class="card-title">John Doe</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Prêt Immobilier</h6>
-                        <p class="card-text">Jhon Doe à été d'un professionnalisme sans nom. Il m'a apporter toutes les réponses à mes questions. Je le recommande pour vos assurances, les yeux fermés! Et je n'hésiterai pas à parler de lui autour de moi!</p>
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                        <p class="card-text">Jhon Doe à été d'un professionnalisme sans nom. Il m'a apporter toutes les
+                            réponses à mes questions. Je le recommande pour vos assurances, les yeux fermés! Et je
+                            n'hésiterai pas à parler de lui autour de moi!</p>
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star"></i>
 
                     </div>
                 </div>
@@ -257,26 +272,26 @@
 
 
 <script>
-    const rangeInputs = document.querySelectorAll('input[type="range"]')
-    const numberInput = document.querySelector('input[type="number"]')
+const rangeInputs = document.querySelectorAll('input[type="range"]')
+const numberInput = document.querySelector('input[type="number"]')
 
-    function handleInputChange(e) {
-        let target = e.target
-        if (e.target.type !== 'range') {
-            target = document.getElementById('range')
-        }
-        const min = target.min
-        const max = target.max
-        const val = target.value
-
-        target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
+function handleInputChange(e) {
+    let target = e.target
+    if (e.target.type !== 'range') {
+        target = document.getElementById('range')
     }
+    const min = target.min
+    const max = target.max
+    const val = target.value
 
-    rangeInputs.forEach(input => {
-        input.addEventListener('input', handleInputChange)
-    })
+    target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
+}
 
-    numberInput.addEventListener('input', handleInputChange)
+rangeInputs.forEach(input => {
+    input.addEventListener('input', handleInputChange)
+})
+
+numberInput.addEventListener('input', handleInputChange)
 </script>
 
 <?php require("../courtier/componants/footer.php"); ?>

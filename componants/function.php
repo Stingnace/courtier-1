@@ -1,4 +1,4 @@
-<?php require("../settings.php");
+<?php require("../settings/settings.php");
 
 
 // **********LES INFORMATIONS SUR LES EMPRUNTEUR ********************************
