@@ -85,7 +85,7 @@ function GetAllHomeLoansCount($bdd)
 // AFFICHER LE NOMBRE TOTAL DE DEMANDES DE PRET IMMO QUI ONT LE STATUT "consulté" 
 function GetConsultedHomeLoansCount($bdd)
 {
-    $req = "SELECT COUNT(*) AS consulted FROM `home_loan` WHERE statut = 'consultée'";
+    $req = "SELECT COUNT(*) AS consulted FROM `home_loan` WHERE statut = 'complétée'";
     $statement = $bdd->query($req);
     $allConsultedHomeLoansCount = $statement->fetch();
     return $allConsultedHomeLoansCount;
@@ -94,7 +94,7 @@ function GetConsultedHomeLoansCount($bdd)
 // AFFICHER LES DEMANDES DE PRET IMMO QUI ONT LE STATUT "consulté" 
 function GetConsultedHomeLoans($bdd)
 {
-    $req = "SELECT * FROM `home_loan` WHERE statut = 'consultée'";
+    $req = "SELECT * FROM `home_loan` WHERE statut = 'complétée'";
     $statement = $bdd->query($req);
     $allConsultedHomeLoansCount = $statement->fetchAll();
     return $allConsultedHomeLoansCount;
