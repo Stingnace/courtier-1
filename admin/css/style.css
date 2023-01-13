@@ -35,3 +35,52 @@ a {
     font-weight: bold;
     font-size: 2rem;
 }
+
+.carte_admin {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black 2px;
+    height: 600px;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    border-radius: 10%;
+}
+
+.profil_item1 img {
+    border-radius: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.profil_item2,
+.profil_item3 {
+    width: 400px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.success {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+}
+
+.error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}

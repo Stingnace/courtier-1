@@ -25,8 +25,8 @@
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Profil</a>
-                    <a class="dropdown-item" href="#">Réglage</a>
+                    <a class="dropdown-item" href="profil_admin.php">Profil</a>
+
                     <a class="dropdown-item" href="actions/deconnexion.php">Déconnexion</a>
                 </div>
             </li>
@@ -56,7 +56,9 @@
                                     bord</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="#"><span class="ml-1 item-text">Voir mon site</span></a>
+                            <a class="nav-link pl-3" href="../../real_estate.php" target="_blank"><span
+                                    class="ml-1 item-text">Voir mon
+                                    site</span></a>
                         </li>
                     </ul>
                 </li>

@@ -8,6 +8,10 @@ require("includes/header_connexion.php");
 <p class="success">Vous êtes bien inscrit, vous pouvez maintenant vous connecter</p>
 <?php } else if (!empty($_GET['error']) && $_GET['error'] == "password") { ?>
 <p class="error">Mot de passe incorrect</p>
+<?php } else if (!empty($_GET['error']) && $_GET['error'] == "absent") { ?>
+<p class="error">Compte admin incorrect</p>
+<?php } else if (isset($_GET['error']) && $_GET['error'] == "falseadmin") { ?>
+<p class="error">Veuillez vous connecter pour accéder à la page administrateur</p>
 <?php } ?>
 
 <div class="container">

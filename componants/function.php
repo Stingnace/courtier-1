@@ -461,3 +461,12 @@ function GetSearch($bdd, $q)
 //         password_hash($_POST['password'], PASSWORD_DEFAULT); 
 //     ])
 // }
+
+
+// *************************PROFIL ADMIN***************************************
+function GetAdmin($bdd)
+{
+    $getAdmin = $bdd->query('SELECT * FROM admin WHERE id = 2');
+    $admin = $getAdmin->fetch();
+    return $admin;
+}

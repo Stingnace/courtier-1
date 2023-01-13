@@ -40,7 +40,7 @@ $Insurances = GetAllInsurances($bdd)
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($Insurance as $Insurance) { ?>
+                            <?php foreach ($Insurances as $Insurance) { ?>
                             <tr>
                                 <td><?= $Insurance['id'] ?></td>
                                 <!-- <th scope="col"></th> -->

@@ -30,21 +30,21 @@ if (!empty($_SESSION) && $_SESSION['id'] == '2' && $_SESSION['email'] == "anthon
 
 ?>
 
-    </aside>
-    <main role="main" class="main-content">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="row align-items-center mb-2">
-                        <div class="col">
-                            <h2 class="h5 page-title">Bienvenue ! Consulter les informations : </h2>
-                        </div>
+</aside>
+<main role="main" class="main-content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="row align-items-center mb-2">
+                    <div class="col">
+                        <h2 class="h5 page-title">Bienvenue ! Consulter les informations : </h2>
                     </div>
-                    <div class="row">
-                    </div> <!-- / .card -->
-                </div> <!-- / .col-md-6 -->
+                </div>
+                <div class="row">
+                </div> <!-- / .card -->
+            </div> <!-- / .col-md-6 -->
 
-                <!-- 
+            <!-- 
             // if (isset($_GET['q']) && !empty($_GET['q'])) {
 
             //     $getSearch = $bdd->query('SELECT * FROM home_loan WHERE usages OR id OR project LIKE "%' . $_GET['q'] . '%" ORDER BY id DESC');
@@ -69,320 +69,347 @@ if (!empty($_SESSION) && $_SESSION['id'] == '2' && $_SESSION['email'] == "anthon
 
 
              LES 3 DERNIERS DEMANDES DE PRET IMMO -->
-                <!-- Striped rows -->
-                <div class="col-md-12 col-lg-8">
-                    <div class="bouttons_admin">
-                        <a href="index.php?menu=immo" class="btn btn-primary">Prêts immobiliers</a>
-                        <a href="index.php?menu=assurance" class="btn btn-primary">Assurance</a>
-                        <a href="index.php?menu=rachat" class="btn btn-primary">Rachat de crédit</a>
-                        <a href="index.php?menu=client" class="btn btn-primary">Clients</a>
-                    </div> <br>
+            <!-- Striped rows -->
+            <div class="col-md-12 col-lg-8">
+                <div class="bouttons_admin">
+                    <a href="index.php?menu=immo" class="btn btn-primary">Prêts immobiliers</a>
+                    <a href="index.php?menu=assurance" class="btn btn-primary">Assurance</a>
+                    <a href="index.php?menu=rachat" class="btn btn-primary">Rachat de crédit</a>
+                    <a href="index.php?menu=client" class="btn btn-primary">Clients</a>
+                </div> <br>
 
 
 
-                    <?php if (isset($_GET['menu']) && $_GET['menu'] == "immo") { ?>
+                <?php if (isset($_GET['menu']) && $_GET['menu'] == "immo") { ?>
 
-                        <div class="card shadow">
-                            <div class="card-body my-n2">
-                                <h2>Les dernières demandes de prêts immobiliers</h2>
-                                <table class="table table-striped table-hover table-borderless">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Projet</th>
-                                            <th>Nature du bien</th>
-                                            <!-- <th>Id du demandeur</th> -->
-                                            <th>Statut</th>
-                                            <th>modifier statut</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($lastHomeLoans as $lastHomeLoan) { ?>
-                                            <tr>
-                                                <td><?= htmlspecialchars($lastHomeLoan['id']) ?></td>
-                                                <!-- <th scope="col"></th> -->
-                                                <td><?= htmlspecialchars($lastHomeLoan['project']) ?></td>
-                                                <td><?= htmlspecialchars($lastHomeLoan['nature_property']) ?></td>
-                                                <td>
-                                                    <?= $lastHomeLoan['statut'] ?>
-                                                </td>
-                                                <td>
+                <div class="card shadow">
+                    <div class="card-body my-n2">
+                        <h2>Les dernières demandes de prêts immobiliers</h2>
+                        <table class="table table-striped table-hover table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Projet</th>
+                                    <th>Nature du bien</th>
+                                    <!-- <th>Id du demandeur</th> -->
+                                    <th>Statut</th>
+                                    <th>modifier statut</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($lastHomeLoans as $lastHomeLoan) { ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($lastHomeLoan['id']) ?></td>
+                                    <!-- <th scope="col"></th> -->
+                                    <td><?= htmlspecialchars($lastHomeLoan['project']) ?></td>
+                                    <td><?= htmlspecialchars($lastHomeLoan['nature_property']) ?></td>
+                                    <td>
+                                        <?= $lastHomeLoan['statut'] ?>
+                                    </td>
+                                    <td>
 
-                                                    <div class=" dropdown">
-                                                        <button class="btn btn-sm dropdown-toggle more-vertical" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="text-muted sr-only">statut</span>
-                                                        </button>
+                                        <div class=" dropdown">
+                                            <button class="btn btn-sm dropdown-toggle more-vertical" type="button"
+                                                id="dr1" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                <span class="text-muted sr-only">statut</span>
+                                            </button>
 
-                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
-                                                            <a class="dropdown-item" href="actions/modifier_statut.php?id=<?= $lastHomeLoan['id'] ?>&action=complétée">complétée</a>
-                                                            <a class="dropdown-item" href="actions/modifier_statut.php?id=<?= $lastHomeLoan['id'] ?>&action=en cours">en
-                                                                cours de traitement</a>
-                                                            <a class="dropdown-item" href="actions/modifier_statut.php?id=<?= $lastHomeLoan['id'] ?>&action=traitée">Traitée</a>
-                                                            <a class="dropdown-item" href="actions/modifier_statut.php?id=<?= $lastHomeLoan['id'] ?>&action=supprimer" id="supp">supprimer</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
+                                                <a class="dropdown-item"
+                                                    href="actions/modifier_statut.php?id=<?= $lastHomeLoan['id'] ?>&action=complétée">complétée</a>
+                                                <a class="dropdown-item"
+                                                    href="actions/modifier_statut.php?id=<?= $lastHomeLoan['id'] ?>&action=en cours">en
+                                                    cours de traitement</a>
+                                                <a class="dropdown-item"
+                                                    href="actions/modifier_statut.php?id=<?= $lastHomeLoan['id'] ?>&action=traitée">Traitée</a>
+                                                <a class="dropdown-item"
+                                                    href="actions/modifier_statut.php?id=<?= $lastHomeLoan['id'] ?>&action=supprimer"
+                                                    id="supp">supprimer</a>
+                                            </div>
+                                        </div>
+                                    </td>
 
 
-                                            </tr>
+                                </tr>
 
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <a href="loan.php" target="_blank" class="btn btn-primary">Voir l'ensemble des
-                                demandes de
-                                prêts immobiliers</a>
-                        </div>
-                </div> <!-- Striped rows -->
-            </div> <!-- .row-->
-        </div> <!-- .col-12 --> <br> <br>
-        <div class="container cartes">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div>
-                        <h4>Nombre de demandes traitées : </h4>
-                        <p id="finies">
-                            <?= htmlspecialchars($TreatedHomeLoans['treated']) ?>
-                        </p>
+                                <?php } ?>
+                            </tbody>
+                        </table>
                     </div>
-
-                    <a href="loan_treated" class="btn btn-success">Voir les demandes traitées</a>
+                    <a href="loan.php" target="_blank" class="btn btn-primary">Voir l'ensemble des
+                        demandes de
+                        prêts immobiliers</a>
                 </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div>
-                        <h4>Nombre de demandes en cours de traitement : </h4>
-                        <p id="current"><?= htmlspecialchars($TreatingdHomeLoans['treating']) ?></p>
-                    </div>
-
-                    <a href="loan_treating.php" class="btn btn-info">Voir toutes les demandes en cours de traitement</a>
+            </div> <!-- Striped rows -->
+        </div> <!-- .row-->
+    </div> <!-- .col-12 --> <br> <br>
+    <div class="container cartes">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div>
+                    <h4>Nombre de demandes traitées : </h4>
+                    <p id="finies">
+                        <?= htmlspecialchars($TreatedHomeLoans['treated']) ?>
+                    </p>
                 </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div>
-                        <h4>Nombre de demandes consultées : </h4>
-                        <p id="consult"><?= htmlspecialchars($ConsultedHomeLoans['consulted']) ?></p>
-                    </div>
 
-                    <a href="loan_consulted.php" class="btn btn-secondary">Voir toutes les demandes consultées</a>
-                </div>
+                <a href="loan_treated" class="btn btn-success">Voir les demandes traitées</a>
             </div>
         </div>
 
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div>
+                    <h4>Nombre de demandes en cours de traitement : </h4>
+                    <p id="current"><?= htmlspecialchars($TreatingdHomeLoans['treating']) ?></p>
+                </div>
 
-        <!-- ***********************INFOS SUR LES DEMANDES D ASSURANCE ********************************************* -->
+                <a href="loan_treating.php" class="btn btn-info">Voir toutes les demandes en cours de traitement</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div>
+                    <h4>Nombre de demandes complétée : </h4>
+                    <p id="consult"><?= htmlspecialchars($ConsultedHomeLoans['consulted']) ?></p>
+                </div>
+
+                <a href="loan_consulted.php" class="btn btn-secondary">Voir toutes les demandes complétée</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ***********************INFOS SUR LES DEMANDES D ASSURANCE ********************************************* -->
     <?php } else if (isset($_GET['menu']) && $_GET['menu'] == "assurance") { ?>
 
-        <div class="card shadow">
-            <div class="card-body my-n2">
-                <h2>Les dernières demandes d'assurances</h2>
-                <table class="table table-striped table-hover table-borderless">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Type de prêt</th>
-                            <th>Durée</th>
-                            <!-- <th>Id du demandeur</th> -->
-                            <th>Statut</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($lastInsurances as $lastInsurance) { ?>
-                            <tr>
-                                <td><?= $lastInsurance['id'] ?></td>
-                                <!-- <th scope="col"></th> -->
-                                <td><?= $lastInsurance['type_loan'] ?></td>
-                                <td><?= $lastInsurance['type_duration'] ?></td>
-                                <td>
-                                    <!-- <div class="dropdown">
-                                        <button class="btn btn-sm dropdown-toggle more-vertical" type="button" id="dr1"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="text-muted sr-only">statut</span>
-                                        </button>
+    <div class="card shadow">
+        <div class="card-body my-n2">
+            <h2>Les dernières demandes d'assurances</h2>
+            <table class="table table-striped table-hover table-borderless">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type de prêt</th>
+                        <th>Durée</th>
+                        <!-- <th>Id du demandeur</th> -->
+                        <th>Statut</th>
+                        <th>Modifier le statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($lastInsurances as $lastInsurance) { ?>
+                    <tr>
+                        <td><?= $lastInsurance['id'] ?></td>
+                        <!-- <th scope="col"></th> -->
+                        <td><?= $lastInsurance['type_loan'] ?></td>
+                        <td><?= $lastInsurance['type_duration'] ?></td>
+                        <td>
 
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
-                                            <a class="dropdown-item" href="#">complétée</a>
-                                            <a class="dropdown-item" href="#">en cours de traitement</a>
-                                            <a class="dropdown-item" href="#">Traitée</a>
-                                        </div>
-                                    </div> -->
-                                </td>
+                            <div class=" dropdown">
+                                <button class="btn btn-sm dropdown-toggle more-vertical" type="button" id="dr1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="text-muted sr-only">statut</span>
+                                </button>
 
-                            </tr>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
+                                    <a class="dropdown-item"
+                                        href="actions/modifier_statut_assurance.php?id=<?= $lastInsurance['id'] ?>&action=complétée">complétée</a>
+                                    <a class="dropdown-item"
+                                        href="actions/modifier_statut_assurance.php?id=<?= $lastInsurance['id'] ?>&action=en cours">en
+                                        cours de traitement</a>
+                                    <a class="dropdown-item"
+                                        href="actions/modifier_statut_assurance.php?id=<?= $lastInsurance['id'] ?>&action=traitée">Traitée</a>
+                                    <a class="dropdown-item"
+                                        href="actions/modifier_statut_assurance.php?id=<?= $lastInsurance['id'] ?>&action=supprimer"
+                                        id="supp">supprimer</a>
+                                </div>
+                            </div>
+                        </td>
 
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-            <a class="btn btn-primary" target="_blank" href="insurance.php">Voir l'ensemble des demandes d'assurance</a>
+                    </tr>
+
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
-        </div> <!-- Striped rows -->
-        </div> <!-- .row-->
-        </div> <!-- .col-12 --> <br> <br>
-        <div class="container cartes">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div>
-                        <h4>Nombre de demandes traitées : </h4>
-                        <p id="finies"><?= htmlspecialchars($TreatedInsurances['treated']) ?></p>
-                    </div>
-
-                    <a href="insurance_treated.php" class="btn btn-success">Voir toutes les demandes traitées</a>
+        <a class="btn btn-primary" target="_blank" href="insurance.php">Voir l'ensemble des demandes d'assurance</a>
+    </div>
+    </div> <!-- Striped rows -->
+    </div> <!-- .row-->
+    </div> <!-- .col-12 --> <br> <br>
+    <div class="container cartes">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div>
+                    <h4>Nombre de demandes traitées : </h4>
+                    <p id="finies"><?= htmlspecialchars($TreatedInsurances['treated']) ?></p>
                 </div>
-            </div>
 
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div>
-                        <h4>Nombre de demandes en cours de traitement : </h4>
-                        <p id="current"><?= htmlspecialchars($TreatingInsurances['treating']) ?></p>
-                    </div>
-
-                    <a href="insurance_treating.php" class="btn btn-info">Voir toutes les demandes en cours de
-                        traitement</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div>
-                        <h4>Nombre de demandes consultées : </h4>
-                        <p id="consult"><?= htmlspecialchars($ConsultedInsurances['consulted']) ?></p>
-                    </div>
-
-                    <a href="insurance_consulted.php" class="btn btn-secondary">Voir toutes les demandes consultées</a>
-                </div>
+                <a href="insurance_treated.php" class="btn btn-success">Voir toutes les demandes traitées</a>
             </div>
         </div>
 
-        <!-- ***********INFOS SUR LES DEMANDES DE RACHATS DE CREDIT************************************* -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div>
+                    <h4>Nombre de demandes en cours de traitement : </h4>
+                    <p id="current"><?= htmlspecialchars($TreatingInsurances['treating']) ?></p>
+                </div>
+
+                <a href="insurance_treating.php" class="btn btn-info">Voir toutes les demandes en cours de
+                    traitement</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div>
+                    <h4>Nombre de demandes complétée : </h4>
+                    <p id="consult"><?= htmlspecialchars($ConsultedInsurances['consulted']) ?></p>
+                </div>
+
+                <a href="insurance_consulted.php" class="btn btn-secondary">Voir toutes les demandes consultées</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ***********INFOS SUR LES DEMANDES DE RACHATS DE CREDIT************************************* -->
     <?php } else if (isset($_GET['menu']) && $_GET['menu'] == "rachat") { ?>
 
-        <div class="card shadow">
-            <div class="card-body my-n2">
-                <h2>Les dernières demandes de rachats de crédit</h2>
-                <table class="table table-striped table-hover table-borderless">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Prix</th>
-                            <th>nombres d'emprunts</th>
-                            <!-- <th>Id du demandeur</th> -->
-                            <th>Statut</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($lastRepurchases as $lastRepurchase) { ?>
-                            <tr>
-                                <td><?= $lastRepurchase['id'] ?></td>
-                                <!-- <th scope="col"></th> -->
-                                <td><?= $lastHomeLoan['price'] ?></td>
-                                <td><?= $lastHomeLoan['number_of_loans'] ?></td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm dropdown-toggle more-vertical" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="text-muted sr-only">statut</span>
-                                        </button>
+    <div class="card shadow">
+        <div class="card-body my-n2">
+            <h2>Les dernières demandes de rachats de crédit</h2>
+            <table class="table table-striped table-hover table-borderless">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Prix</th>
+                        <th>nombres d'emprunts</th>
+                        <!-- <th>Id du demandeur</th> -->
+                        <th>Statut</th>
+                        <th>Modifier le statut</th>
 
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
-                                            <a class="dropdown-item" href="#">complétée</a>
-                                            <a class="dropdown-item" href="#">en cours</a>
-                                            <a class="dropdown-item" href="#">Traitée</a>
-                                        </div>
-                                    </div>
-                                </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($lastRepurchases as $lastRepurchase) { ?>
+                    <tr>
+                        <td><?= $lastRepurchase['id'] ?></td>
+                        <!-- <th scope="col"></th> -->
+                        <td><?= $lastRepurchase['price'] ?></td>
+                        <td><?= $lastRepurchase['number_of_loans'] ?></td>
+                        <td>
 
-                            </tr>
+                            <div class=" dropdown">
+                                <button class="btn btn-sm dropdown-toggle more-vertical" type="button" id="dr1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="text-muted sr-only">statut</span>
+                                </button>
 
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-            <a class="btn btn-primary" href="repurchase.php">Voir l'ensemble des demandes de rachats de crédits </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
+                                    <a class="dropdown-item"
+                                        href="actions/modifier_statut_rachat.php?id=<?= $lastRepurchase['id'] ?>&action=complétée">complétée</a>
+                                    <a class="dropdown-item"
+                                        href="actions/modifier_statut_rachat.php?id=<?= $lastRepurchase['id'] ?>&action=en cours">en
+                                        cours de traitement</a>
+                                    <a class="dropdown-item"
+                                        href="actions/modifier_statut_rachat.php?id=<?= $lastRepurchase['id'] ?>&action=traitée">Traitée</a>
+                                    <a class="dropdown-item"
+                                        href="actions/modifier_statut_rachat.php?id=<?= $lastRepurchase['id'] ?>&action=supprimer"
+                                        id="supp">supprimer</a>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
-        </div> <!-- Striped rows -->
-        </div> <!-- .row-->
-        </div> <!-- .col-12 --> <br> <br>
-        <div class="container cartes">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div>
-                        <h4>Nombre de demandes traitées : </h4>
-                        <p id="finies"><?= htmlspecialchars($TreatedRepurchases['treated']) ?></p>
-                    </div>
-
-                    <a href="repurchase_treated.php" class="btn btn-success">Voir toutes les demandes traitées</a>
+        <a class="btn btn-primary" href="repurchase.php">Voir l'ensemble des demandes de rachats de crédits </a>
+    </div>
+    </div> <!-- Striped rows -->
+    </div> <!-- .row-->
+    </div> <!-- .col-12 --> <br> <br>
+    <div class="container cartes">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div>
+                    <h4>Nombre de demandes traitées : </h4>
+                    <p id="finies"><?= htmlspecialchars($TreatedRepurchases['treated']) ?></p>
                 </div>
-            </div>
 
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div>
-                        <h4>Nombre de demandes en cours de traitement : </h4>
-                        <p id="current"><?= htmlspecialchars($TreatingRepurchases['treating']) ?></p>
-                    </div>
-
-                    <a href="repurchase_treating.php" class="btn btn-info">Voir toutes les demandes en cours de
-                        traitement</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <div>
-                        <h4>Nombre de demandes consultées : </h4>
-                        <p id="consult"><?= htmlspecialchars($ConsultedRepurchases['consulted']) ?></p>
-                    </div>
-
-                    <a href="repurchase_consulted.php" class="btn btn-secondary">Voir toutes les demandes consultées</a>
-                </div>
+                <a href="repurchase_treated.php" class="btn btn-success">Voir toutes les demandes traitées</a>
             </div>
         </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div>
+                    <h4>Nombre de demandes en cours de traitement : </h4>
+                    <p id="current"><?= htmlspecialchars($TreatingRepurchases['treating']) ?></p>
+                </div>
+
+                <a href="repurchase_treating.php" class="btn btn-info">Voir toutes les demandes en cours de
+                    traitement</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div>
+                    <h4>Nombre de demandes consultées : </h4>
+                    <p id="consult"><?= htmlspecialchars($ConsultedRepurchases['consulted']) ?></p>
+                </div>
+
+                <a href="repurchase_consulted.php" class="btn btn-secondary">Voir toutes les demandes consultées</a>
+            </div>
+        </div>
+    </div>
 
 
     <?php } else if (isset($_GET['menu']) && $_GET['menu'] == "client") { ?>
 
-        <div class="card shadow">
-            <div class="card-body my-n2">
-                <h2>Les dernièrs clients inscrits </h2>
-                <table class="table table-striped table-hover table-borderless">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>email</th>
-                            <!-- <th>Id du demandeur</th> -->
+    <div class="card shadow">
+        <div class="card-body my-n2">
+            <h2>Les dernièrs clients inscrits </h2>
+            <table class="table table-striped table-hover table-borderless">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>email</th>
+                        <!-- <th>Id du demandeur</th> -->
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($lastBorrowers as $lastBorrower) { ?>
-                            <tr>
-                                <td><?= $lastBorrower['id'] ?></td>
-                                <!-- <th scope="col"></th> -->
-                                <td><?= $lastBorrower['name'] ?></td>
-                                <td><?= $lastBorrower['mail'] ?></td>
-                                <td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($lastBorrowers as $lastBorrower) { ?>
+                    <tr>
+                        <td><?= $lastBorrower['id'] ?></td>
+                        <!-- <th scope="col"></th> -->
+                        <td><?= $lastBorrower['name'] ?></td>
+                        <td><?= $lastBorrower['mail'] ?></td>
+                        <td>
 
-                                </td>
+                        </td>
 
-                            </tr>
+                    </tr>
 
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-            <a class="btn btn-primary" target="_blank" href="client.php">Voir l'ensemble des clients inscrits</a>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
+        <a class="btn btn-primary" target="_blank" href="client.php">Voir l'ensemble des clients inscrits</a>
+    </div>
 
     <?php } ?>
 
 
-<?php } else {
-    header("location: ../../real_estate.php?error=falseadmin");
+    <?php } else {
+    header("location: connexion.php?error=falseadmin");
 } ?>
 
 
-<?php require("includes/footer_admin.php");
+    <?php require("includes/footer_admin.php");
