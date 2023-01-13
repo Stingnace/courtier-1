@@ -4,6 +4,8 @@
     require("includes/wrapper.php");
     //   FONCTION POUR OBTENIR TOUTES LES INFORMATIONS SUR LES DEMANDES DE PRETS 
     $HomeLoans = GetAllHomeLoans($bdd);
+    $userLoans = GetUserAndLoan($bdd);
+
     ?>
 
     </aside>
@@ -14,6 +16,7 @@
                     <div class="row align-items-center mb-2">
                         <div class="col">
                             <h2 class="h5 page-title">Bienvenue ! Consulter les informations : </h2>
+                            <?php var_dump($userLoans); ?>
                         </div>
                     </div>
                     <div class="row">
@@ -30,76 +33,32 @@
                         <table class="table  table-striped table-hover table-borderless">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Nature du projet</th>
-                                    <!-- <th>Id du demandeur</th> -->
-                                    <th>condition</th>
-                                    <th>usages</th>
-                                    <th>situation de recherche</th>
-                                    <th>situation actuelle</th>
-                                    <th>lieu du bien</th>
-                                    <th>valeur du bien </th>
-                                    <th>valeur des travaux </th>
-                                    <th>mode de prêt </th>
-                                    <th>contribution </th>
-                                    <th>choix de la banque </th>
-                                    <th>statut</th>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>Email</th>
+                                    <th>projet</th>
+                                    <th>Valeur du bien</th>
+                                    <th>Localisation du bien</th>
+                                    <th>Voir la demande</th>
+
+
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($HomeLoans as $HomeLoan) { ?>
+                                <?php foreach ($userLoans as $userLoan) { ?>
                                 <tr>
-                                    <td><?= $HomeLoan['id'] ?></td>
-                                    <!-- <th scope="col"></th> -->
-                                    <td><?= $HomeLoan['nature_property'] ?></td>
-                                    <td><?= $HomeLoan['conditions'] ?></td>
-                                    <td><?= $HomeLoan['usages'] ?></td>
-                                    <td><?= $HomeLoan['search_situation'] ?></td>
-                                    <td><?= $HomeLoan['situation_current_home'] ?></td>
-                                    <td><?= $HomeLoan['location_future_property'] ?></td>
-                                    <td><?= $HomeLoan['value_property'] ?></td>
-                                    <td><?= $HomeLoan['value_works'] ?></td>
-                                    <td><?= $HomeLoan['loan_mode'] ?></td>
-                                    <td><?= $HomeLoan['personal_contribution'] ?></td>
-                                    <td><?= $HomeLoan['choice_bank'] ?></td>
+                                    <td><?= $userLoan['name'] ?></td>
+                                    <td><?= $userLoan['first_name'] ?></td>
+                                    <td><?= $userLoan['mail'] ?></td>
+                                    <td><?= $userLoan['nature_property'] ?></td>
+                                    <td><?= $userLoan['value_property'] ?></td>
+                                    <td><?= $userLoan['location_future_property'] ?></td>
+
+
+
                                     <td>
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">
-                                            Gérer
-                                        </button>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Statut
-                                                            de la demande
-                                                        </h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option selected>Statut</option>
-                                                            <option value="consultée">consultée</option>
-                                                            <option value="en cours">en cours</option>
-                                                            <option value="traitée">traitée</option>
-                                                        </select>
-
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Fermer</button>
-                                                        <button type="button" class="btn btn-primary">Sauvegarder
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <a href="" class="btn btn-success"> hello</a>
                                     </td>
 
 

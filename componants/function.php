@@ -470,3 +470,10 @@ function GetAdmin($bdd)
     $admin = $getAdmin->fetch();
     return $admin;
 }
+
+function GetUserAndLoan($bdd)
+{
+    $getUserLoan = $bdd->query('SELECT home_loan.*, id_borrower as b_id, borrower.name, borrower.first_name, borrower.mail FROM home_loan INNER JOIN borrower ON borrower.id = home_loan.id_borrower ');
+    $UserLoans = $getUserLoan->fetchAll();
+    return $UserLoans;
+}
